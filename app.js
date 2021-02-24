@@ -114,7 +114,7 @@ function startup() {
     g = g.toString(16); // make it a hex digit
     b = b.toString(16); // make it a hex digit
     var color = "#"+r+g+b;
-    log("color for touch with identifier " + touch.identifier + " = " + r, g, b, + color);
+    log("id " + touch.identifier + " = " + r, g, b, color);
     return color;
   }
 
