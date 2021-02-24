@@ -107,14 +107,10 @@ function startup() {
 
 
   function colorForTouch(touch) {
-    var r = touch.identifier % 16;
-    var g = Math.floor(touch.identifier / 3) % 16;
-    var b = Math.floor(touch.identifier / 7) % 16;
-    r = r.toString(16); // make it a hex digit
-    g = g.toString(16); // make it a hex digit
-    b = b.toString(16); // make it a hex digit
-    var color = "#"+r+g+b;
-    log("id " + touch.identifier + " = " + color);
+    let colorArray = ['blue', 'red', 'green', 'pink', 'violet', 'yellow', 'purple', 'gray'];
+    let index = Math.floor(Math.random() * colorArray.length);
+    let color = colorArray[index];
+    log(color);
     return color;
   }
 
