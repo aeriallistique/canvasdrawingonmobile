@@ -12,16 +12,15 @@ function startup() {
 
   function handleStart(evt) {
     evt.preventDefault();
-    console.log("touchstart.");
+    var color = colorForTouch();
     var el = document.getElementById("canvas");
     var ctx = el.getContext("2d");
     var touches = evt.changedTouches;
     
   
     for (var i = 0; i < touches.length; i++) {
-      console.log("touchstart:" + i + "...");
       ongoingTouches.push(copyTouch(touches[i]));
-      var color = colorForTouch();
+      
       ctx.beginPath();
       ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);  // a circle at the start
       ctx.fillStyle = color;
@@ -70,9 +69,10 @@ function startup() {
     var el = document.getElementById("canvas");
     var ctx = el.getContext("2d");
     var touches = evt.changedTouches;
+    var color = colorForTouch();
+
   
     for (var i = 0; i < touches.length; i++) {
-      var color = colorForTouch(touches[i]);
       var idx = ongoingTouchIndexById(touches[i].identifier);
   
       if (idx >= 0) {
