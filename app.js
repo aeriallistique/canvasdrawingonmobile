@@ -107,7 +107,7 @@ function startup() {
 
 
   function colorForTouch(touch) {
-    var r = touch.identifier % 16;
+    var r = Math.floor(touch.identifier % 16);
     var g = Math.floor(touch.identifier / 3) % 16;
     var b = Math.floor(touch.identifier / 7) % 16;
     r = r.toString(16); // make it a hex digit
