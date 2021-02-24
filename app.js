@@ -25,7 +25,7 @@ function startup() {
       ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);  // a circle at the start
       ctx.fillStyle = color;
       ctx.fill();
-      console.log("touchstart:" + i + ".");
+     
     }
   }
 
@@ -64,7 +64,7 @@ function startup() {
 
   function handleEnd(evt) {
     evt.preventDefault();
-    log("touchend");
+    
     var el = document.getElementById("canvas");
     var ctx = el.getContext("2d");
     var touches = evt.changedTouches;
@@ -79,7 +79,11 @@ function startup() {
         ctx.beginPath();
         ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
         ctx.lineTo(touches[i].pageX, touches[i].pageY);
-        ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8);  // and a square at the end
+
+        //ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8);  // and a square at the end
+
+        ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);  // a circle at the start
+
         ongoingTouches.splice(idx, 1);  // remove it; we're done
       } else {
         console.log("can't figure out which touch to end");
