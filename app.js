@@ -38,8 +38,9 @@ function startup() {
     var ctx = el.getContext("2d");
     var touches = evt.changedTouches;
   
+    var color = colorForTouch();
     for (var i = 0; i < touches.length; i++) {
-      var color = colorForTouch();
+      
       var idx = ongoingTouchIndexById(touches[i].identifier);
   
       if (idx >= 0) {
