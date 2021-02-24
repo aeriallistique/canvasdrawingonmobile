@@ -110,7 +110,7 @@ function startup() {
     let colorArray = ['blue', 'red', 'green', 'pink', 'violet', 'yellow', 'purple', 'gray'];
     let index = Math.floor(Math.random() * colorArray.length);
     let color = colorArray[index];
-    log(color);
+   // log(color);
     return color;
   }
 
