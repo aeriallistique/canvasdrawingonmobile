@@ -16,6 +16,7 @@ function startup() {
     var el = document.getElementById("canvas");
     var ctx = el.getContext("2d");
     var touches = evt.changedTouches;
+    log(evt.changedTouches)
   
     for (var i = 0; i < touches.length; i++) {
       console.log("touchstart:" + i + "...");
@@ -113,7 +114,7 @@ function startup() {
     g = g.toString(16); // make it a hex digit
     b = b.toString(16); // make it a hex digit
     var color = "#" + r + g + b;
-    console.log("color for touch with identifier " + touch.identifier + " = " + color);
+    log("color for touch with identifier " + touch.identifier + " = " + color);
     return color;
   }
 
