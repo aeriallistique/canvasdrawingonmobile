@@ -16,7 +16,7 @@ function startup() {
     var el = document.getElementById("canvas");
     var ctx = el.getContext("2d");
     var touches = evt.changedTouches;
-    log(evt.changedTouches)
+    
   
     for (var i = 0; i < touches.length; i++) {
       console.log("touchstart:" + i + "...");
