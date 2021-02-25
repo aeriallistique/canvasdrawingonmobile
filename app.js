@@ -22,12 +22,13 @@ function startup() {
       ongoingTouches.push(copyTouch(touches[i]));
       //ctx.beginPath();
       //ctx.arc(touches[0].pageX, touches[0].pageY, 12, 0, 2 * Math.PI, false);  // a circle at the start
-      ctx.lineTo(touches[0].pageX, touches[0].pageY);
-      ctx.stroke();
       ctx.beginPath();
       ctx.moveTo(touches[0].pageX, touches[0].pageY)
+      ctx.lineTo(touches[0].pageX, touches[0].pageY);
+      ctx.stroke();
+      
       ctx.lineCap = 'round';
-      ctx.fillStyle = colorChoice;
+      ctx.strokeStyle = colorChoice;
       //ctx.fill();
      
     }
