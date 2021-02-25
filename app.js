@@ -13,7 +13,7 @@ function startup() {
 
   function handleStart(evt) {
     evt.preventDefault();
-    log(evt.pageY, evt.clientY)
+    log(evt.clientY)
     var el = document.getElementById("canvas");
     var ctx = el.getContext("2d");
     var touches = evt.changedTouches;
