@@ -26,7 +26,7 @@ function startup() {
       ctx.moveTo(touches[0].pageX, touches[0].pageY)
       ctx.lineTo(touches[0].pageX, touches[0].pageY);
       ctx.stroke();
-      
+      ctx.lineWidth = 200;
       ctx.lineCap = 'round';
       ctx.strokeStyle = colorChoice;
       //ctx.fill();
