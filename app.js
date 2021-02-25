@@ -24,7 +24,7 @@ function startup() {
       //ctx.arc(touches[0].pageX, touches[0].pageY, 12, 0, 2 * Math.PI, false);  // a circle at the start
       ctx.beginPath();
       ctx.moveTo(touches[0].pageX, touches[0].pageY)
-      ctx.lineTo(touches[0].pageX, touches[0].pageY);
+     // ctx.lineTo(touches[0].pageX, touches[0].pageY);
       ctx.stroke();
       ctx.lineWidth = 200;
       ctx.lineCap = 'round';
