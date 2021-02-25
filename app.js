@@ -13,7 +13,6 @@ function startup() {
 
   function handleStart(evt) {
     evt.preventDefault();
-    log(evt.pageY)
     var el = document.getElementById("canvas");
     var ctx = el.getContext("2d");
     var touches = evt.changedTouches;
@@ -22,7 +21,7 @@ function startup() {
     for (var i = 0; i < touches.length; i++) {
       ongoingTouches.push(copyTouch(touches[i]));
       ctx.beginPath();
-      ctx.arc(evt.pageX, evt.pageY, 8, 0, 2 * Math.PI, false);  // a circle at the start
+      ctx.arc(evt.screenX, evt.screenY, 8, 0, 2 * Math.PI, false);  // a circle at the start
       ctx.lineWidth = 200;
       ctx.lineCap = 'round';
       ctx.strokeStyle = colorChoice;
