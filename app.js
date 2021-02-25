@@ -21,7 +21,7 @@ function startup() {
     for (var i = 0; i < touches.length; i++) {
       ongoingTouches.push(copyTouch(touches[i]));
       ctx.beginPath();
-      ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);  // a circle at the start
+      ctx.arc(touches[i].pageX, touches[i].pageY, 12, 0, 2 * Math.PI, false);  // a circle at the start
       ctx.fillStyle = color;
       ctx.fill();
      
@@ -47,12 +47,11 @@ function startup() {
         ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
         console.log("ctx.lineTo(" + touches[i].pageX + ", " + touches[i].pageY + ");");
         ctx.lineTo(touches[i].pageX, touches[i].pageY);
-        ctx.lineWidth = 4;
+        ctx.lineWidth = 12;
         ctx.strokeStyle = color;
         ctx.stroke();
   
         ongoingTouches.splice(idx, 1, copyTouch(touches[i]));  // swap in the new touch record
-        console.log(".");
       } else {
         console.log("can't figure out which touch to continue");
       }
@@ -72,7 +71,7 @@ function startup() {
       var idx = ongoingTouchIndexById(touches[i].identifier);
   
       if (idx >= 0) {
-        ctx.lineWidth = 4;
+        ctx.lineWidth = 12;
         ctx.fillStyle = color;
         ctx.beginPath();
         ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
@@ -80,7 +79,7 @@ function startup() {
 
         //ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8);  // and a square at the end
 
-        ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);  // a circle at the start
+        ctx.arc(touches[i].pageX, touches[i].pageY, 12, 0, 2 * Math.PI, false);  // a circle at the end
 
         ongoingTouches.splice(idx, 1);  // remove it; we're done
       } else {
