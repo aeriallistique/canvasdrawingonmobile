@@ -9,7 +9,7 @@ function startup() {
   document.addEventListener("DOMContentLoaded", startup);
 
   var ongoingTouches = [];
-  var color = colorForTouch();
+  var colorChoice = colorForTouch();
 
   function handleStart(evt) {
     evt.preventDefault();
@@ -23,7 +23,7 @@ function startup() {
       ctx.beginPath();
       ctx.arc(touches[0].pageX, touches[0].pageY, 12, 0, 2 * Math.PI, false);  // a circle at the start
       ctx.lineCap = 'round';
-      ctx.fillStyle = color;
+      ctx.fillStyle = colorChoice;
       ctx.fill();
      
     }
@@ -49,7 +49,7 @@ function startup() {
         ctx.lineTo(touches[i].pageX, touches[i].pageY);
         ctx.lineWidth = 12;
         ctx.lineCap = 'round'
-        ctx.strokeStyle = color;
+        ctx.strokeStyle = colorChoice;
         ctx.stroke();
   
         ongoingTouches.splice(idx, 1, copyTouch(touches[i]));  // swap in the new touch record
@@ -74,7 +74,7 @@ function startup() {
       if (idx >= 0) {
         ctx.lineWidth = 12;
         ctx.lineCap = 'round';
-        ctx.fillStyle = color;
+        ctx.fillStyle = colorChoice;
         ctx.beginPath();
         ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
         ctx.lineTo(touches[i].pageX, touches[i].pageY);
