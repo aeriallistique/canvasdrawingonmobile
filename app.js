@@ -20,16 +20,12 @@ function startup() {
     
     for (var i = 0; i < touches.length; i++) {
       ongoingTouches.push(copyTouch(touches[i]));
-      //ctx.beginPath();
-      //ctx.arc(touches[0].pageX, touches[0].pageY, 12, 0, 2 * Math.PI, false);  // a circle at the start
       ctx.beginPath();
-      ctx.moveTo(evt.clientX, evt.clientY)
-     // ctx.lineTo(touches[0].pageX, touches[0].pageY);
-      ctx.stroke();
+      ctx.arc(touches[0].pageX, touches[0].pageY, 12, 0, 2 * Math.PI, false);  // a circle at the start
       ctx.lineWidth = 200;
       ctx.lineCap = 'round';
       ctx.strokeStyle = colorChoice;
-      //ctx.fill();
+      ctx.fill();
      
     }
   }
