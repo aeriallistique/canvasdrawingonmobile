@@ -21,7 +21,7 @@ function startup() {
     for (var i = 0; i < touches.length; i++) {
       ongoingTouches.push(copyTouch(touches[i]));
       ctx.beginPath();
-      ctx.arc(touches[i].pageX, touches[i].pageY, 12, 0, 2 * Math.PI, false);  // a circle at the start
+      ctx.arc(touches[0].pageX, touches[0].pageY, 12, 0, 2 * Math.PI, false);  // a circle at the start
       ctx.lineCap = 'round';
       ctx.fillStyle = color;
       ctx.fill();
