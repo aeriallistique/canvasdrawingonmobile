@@ -17,11 +17,10 @@ function startup() {
     var ctx = el.getContext("2d");
     var touches = evt.changedTouches;
     
-    
     for (var i = 0; i < touches.length; i++) {
       ongoingTouches.push(copyTouch(touches[i]));
       ctx.beginPath();
-      ctx.arc(evt.pageX, evt.pageY - 150, 8, 0, 2 * Math.PI, false);  // a circle at the start
+      ctx.lineTo(evt.pageX, evt.pageY - 150, 8, 0, 2 * Math.PI, false);  // a circle at the start
       ctx.lineWidth = 200;
       ctx.lineCap = 'round';
       ctx.strokeStyle = colorChoice;
