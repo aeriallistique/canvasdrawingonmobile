@@ -20,11 +20,15 @@ function startup() {
     
     for (var i = 0; i < touches.length; i++) {
       ongoingTouches.push(copyTouch(touches[i]));
+      //ctx.beginPath();
+      //ctx.arc(touches[0].pageX, touches[0].pageY, 12, 0, 2 * Math.PI, false);  // a circle at the start
+      ctx.lineTo(touches[0].pageX, touches[0].pageY);
+      ctx.stroke();
       ctx.beginPath();
-      ctx.arc(touches[0].pageX, touches[0].pageY, 12, 0, 2 * Math.PI, false);  // a circle at the start
+      ctx.moveTo(touches[0].pageX, touches[0].pageY)
       ctx.lineCap = 'round';
       ctx.fillStyle = colorChoice;
-      ctx.fill();
+      //ctx.fill();
      
     }
   }
@@ -44,7 +48,6 @@ function startup() {
       if (idx >= 0) {
         console.log("continuing touch "+idx);
         ctx.beginPath();
-        console.log("ctx.moveTo(" + ongoingTouches[idx].pageX + ", " + ongoingTouches[idx].pageY + ");");
         ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
         ctx.lineTo(touches[i].pageX, touches[i].pageY);
         ctx.lineWidth = 12;
