@@ -15,6 +15,7 @@ body{
     border: 2px solid green;
     background-color: white !important;
     color: white !important;
+    z-index: 9;
 }
 
 #canvas{
@@ -25,13 +26,22 @@ body{
     height: 100%;
     border: 1px solid black;
     border: 1px solid pink ;
+    z-index: 0;
 }
 
 .side{
-    height: 100%;
-    width: 100%;
+    height: 50%;
+    width: 50%;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 20;
+    left: 45;
 }
 .side h1, .side h5{ color: white !important;}
+
+.cursor-on{
+    cursor: pointer;
+}
+
+.cursor-off{
+    pointer-events: none;
+}
