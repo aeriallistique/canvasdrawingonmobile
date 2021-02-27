@@ -11,6 +11,7 @@ body{
 .drawing-content{
     height: 90%;
     width: 90%;
+    margin: 2rem auto;
     position: relative;
     border: 2px solid green;
     background-color: white !important;
@@ -33,8 +34,9 @@ body{
     height: 50%;
     width: 50%;
     position: absolute;
-    top: 20;
-    left: 45;
+    top: 50;
+    left: 50;
+    border: 1px solid red;
 }
 .side h1, .side h5{ color: white !important;}
 
