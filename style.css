@@ -7,10 +7,10 @@
 body{
     height: 100vh;
     width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+}
+.drawing-content{
+    height: 70%;
+    width: 100%;
 }
 
 #canvas{
