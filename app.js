@@ -21,7 +21,7 @@ function startup() {
       ongoingTouches.push(copyTouch(touches[i]));
       ctx.beginPath();
       ctx.lineTo(evt.pageX, evt.pageY - 150);  // a circle at the start
-      ctx.lineWidth = 200;
+      ctx.lineWidth = 8;
       ctx.lineCap = 'round';
       ctx.strokeStyle = colorChoice;
       ctx.fill();
